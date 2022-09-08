@@ -11,6 +11,7 @@
 		0EA868BD28C9CC9D006AC365 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA868BC28C9CC9D006AC365 /* ContentView.swift */; };
 		0EA868BF28C9CC9F006AC365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EA868BE28C9CC9F006AC365 /* Assets.xcassets */; };
 		0EA868C228C9CC9F006AC365 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EA868C128C9CC9F006AC365 /* Preview Assets.xcassets */; };
+		0EA868C928C9E827006AC365 /* ButtonPressActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA868C828C9E827006AC365 /* ButtonPressActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		0EA868BC28C9CC9D006AC365 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0EA868BE28C9CC9F006AC365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EA868C128C9CC9F006AC365 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0EA868C828C9E827006AC365 /* ButtonPressActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				0EA868BC28C9CC9D006AC365 /* ContentView.swift */,
 				0EA868BE28C9CC9F006AC365 /* Assets.xcassets */,
 				0EA868C028C9CC9F006AC365 /* Preview Content */,
+				0EA868C828C9E827006AC365 /* ButtonPressActions.swift */,
 			);
 			path = TrafficLight;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EA868BD28C9CC9D006AC365 /* ContentView.swift in Sources */,
+				0EA868C928C9E827006AC365 /* ButtonPressActions.swift in Sources */,
 				0EA868BB28C9CC9D006AC365 /* TrafficLightApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

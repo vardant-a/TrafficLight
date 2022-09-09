@@ -28,12 +28,9 @@ struct ContentView: View {
     // MARK: - Setting Traffic Light
     private var trafficLight: some View {
         VStack {
-            createCircle(.red)
-                .opacity(count == 0 ? 1.0 : 0.4)
-            createCircle(.yellow)
-                .opacity(count == 1 ? 1.0 : 0.4)
-            createCircle(.green)
-                .opacity(count == 2 ? 1.0 : 0.4)
+            createCircle(.red, position: 0)
+            createCircle(.yellow, position: 1)
+            createCircle(.green, position: 2)
         }
     }
     
@@ -77,10 +74,11 @@ struct ContentView: View {
             count = 0
         }
     }
-    private func createCircle(_ color: Color) -> some View {
+    private func createCircle(_ color: Color, position: Int) -> some View {
        return Circle()
                 .foregroundColor(color)
                 .frame(width: 125, height: 125)
+                .opacity(count == position ? 1.0 : 0.4)
                 .overlay(Circle().stroke(Color.white, lineWidth: 5))
                 .padding(.bottom, 20)
     }

@@ -11,7 +11,7 @@ struct ContentView: View {
     
     // MARK: - @State private properties
     @State private var isPressed = false
-    @State private var count = -1
+    @State private var positionLight = -1
     
     // MARK: - Body Application
     var body: some View {
@@ -19,7 +19,6 @@ struct ContentView: View {
             backgroundColorView
             VStack {
                 trafficLight
-                    .padding(.bottom, 80)
                 trafficLightButton
             }
         }
@@ -28,10 +27,11 @@ struct ContentView: View {
     // MARK: - Setting Traffic Light
     private var trafficLight: some View {
         VStack {
-            createCircle(.red, position: 0)
-            createCircle(.yellow, position: 1)
-            createCircle(.green, position: 2)
+            createLightSignal(.red, position: 0)
+            createLightSignal(.yellow, position: 1)
+            createLightSignal(.green, position: 2)
         }
+        .padding(.bottom, 80)
     }
     
     // MARK: - Setting background color view
@@ -44,7 +44,7 @@ struct ContentView: View {
     private var trafficLightButton: some View {
         // если прописываю переключение в action то не срабатывают края кнопки, только по этой причине оставил анимацию
         Button(action: {}) {
-            Text(count == -1 ? "Start" : "Next")
+            Text(positionLight == -1 ? "Start" : "Next")
                 .font(.custom("Seravek-Bold", size: 30))
                 .fontWeight(.bold)
                 .foregroundColor(isPressed ? .yellow : .white)
@@ -68,18 +68,18 @@ struct ContentView: View {
     
     // MARK: - Private methods
     private func lightSwitching() {
-        if count < 2 {
-            count += 1
+        if positionLight < 2 {
+            positionLight += 1
         } else {
-            count = 0
+            positionLight = 0
         }
     }
     
-    private func createCircle(_ color: Color, position: Int) -> some View {
+    private func createLightSignal(_ color: Color, position: Int) -> some View {
        return Circle()
                 .foregroundColor(color)
                 .frame(width: 125, height: 125)
-                .opacity(count == position ? 1.0 : 0.4)
+                .opacity(positionLight == position ? 1.0 : 0.4)
                 .overlay(Circle().stroke(Color.white, lineWidth: 5))
                 .padding(.bottom, 20)
     }

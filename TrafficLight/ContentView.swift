@@ -47,7 +47,7 @@ struct ContentView: View {
     private var trafficLightButton: some View {
         // если прописываю переключение в action то не срабатывают края кнопки, только по этой причине оставил анимацию
         Button(action: {}) {
-            Text(count == 3 ? "Start" : "Next")
+            Text(count == -1 ? "Start" : "Next")
                 .font(.custom("Seravek-Bold", size: 30))
                 .fontWeight(.bold)
                 .foregroundColor(isPressed ? .yellow : .white)

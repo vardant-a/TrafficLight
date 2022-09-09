@@ -16,7 +16,7 @@ struct ContentView: View {
     // MARK: - Body Application
     var body: some View {
         ZStack {
-            background
+            backgroundColorView
             VStack {
                 trafficLight
                     .padding(.bottom, 80)
@@ -35,7 +35,7 @@ struct ContentView: View {
     }
     
     // MARK: - Setting background color view
-    private var background: some View {
+    private var backgroundColorView: some View {
         Color(.black)
             .ignoresSafeArea()
     }
@@ -74,6 +74,7 @@ struct ContentView: View {
             count = 0
         }
     }
+    
     private func createCircle(_ color: Color, position: Int) -> some View {
        return Circle()
                 .foregroundColor(color)

@@ -11,8 +11,9 @@ struct ContentView: View {
     
     // MARK: - @State private properties
     @State private var isPressed = false
-    @State private var count = 3
+    @State private var count = -1
     
+    // MARK: - Body Application
     var body: some View {
         ZStack {
             background
@@ -27,24 +28,12 @@ struct ContentView: View {
     // MARK: - Setting Traffic Light
     private var trafficLight: some View {
         VStack {
-            Circle()
-                .foregroundColor(.red)
+            setCircle(.red)
                 .opacity(count == 0 ? 1.0 : 0.4)
-                .frame(width: 125, height: 125)
-                .overlay(Circle().stroke(Color.white, lineWidth: 5))
-                .padding(.bottom, 20)
-            Circle()
-                .foregroundColor(.yellow)
+            setCircle(.yellow)
                 .opacity(count == 1 ? 1.0 : 0.4)
-                .frame(width: 125, height: 125)
-                .overlay(Circle().stroke(Color.white, lineWidth: 5))
-                .padding(.bottom, 20)
-            Circle()
-                .foregroundColor(.green)
+            setCircle(.green)
                 .opacity(count == 2 ? 1.0 : 0.4)
-                .frame(width: 125, height: 125)
-                .overlay(Circle().stroke(Color.white, lineWidth: 5))
-                .padding(.bottom, 20)
         }
     }
     
@@ -87,6 +76,13 @@ struct ContentView: View {
         } else {
             count = 0
         }
+    }
+    private func setCircle(_ color: Color) -> some View {
+       return Circle()
+                .foregroundColor(color)
+                .frame(width: 125, height: 125)
+                .overlay(Circle().stroke(Color.white, lineWidth: 5))
+                .padding(.bottom, 20)
     }
 }
 
